@@ -1,15 +1,29 @@
 package de.eldecker.dhbw;
 
+import static de.eldecker.dhbw.UrlPruefer.pruefeUrl;
+
 import java.util.Scanner;
 import java.util.Optional;
 
+
+/**
+ * Klasse mit Einstiegsmethode.
+ */
 public class App  {
 	
+	/** Objekt zum Einlsen Eingabe von Tastatur. */
 	private static final Scanner sScanner = new Scanner( System.in );
 
+	
+	/**
+	 * URL von Tastatur einlesen.
+	 * 
+	 * @return Optional enthält den eingegeben String, wenn der Nutzer
+	 *         etwas eingegeben hat.
+	 */
     private static Optional<String> urlEinlesen() {
 
-        System.out.print("Bitte URL eingeben: ");
+        System.out.print( "Bitte URL eingeben: " );
         String eingabeZeile = sScanner.nextLine();
 
         if (eingabeZeile == null) {
@@ -46,9 +60,19 @@ public class App  {
 
             String url = urlOptional.get();
             System.out.println( "URL eingegeben: \"" + url + "\"" );
+            
+            boolean istOkay = pruefeUrl( url );
+            if ( istOkay ) {
+            	
+            	System.out.println( "Die URL ist syntaktisch korrekt." );
+            	
+            } else {
+            	
+            	System.out.println( "Die URL ist syntaktisch NICHT korrekt." );
+            }
+            
+            System.out.println();
         }
-
-        System.out.println();
         
         sScanner.close();
     }
