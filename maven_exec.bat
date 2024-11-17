@@ -1,2 +1,2 @@
 
-mvn exec:java -Dexec.mainClass=de.eldecker.dhbw.App
+mvnw exec:java -Dexec.mainClass=de.eldecker.dhbw.App
