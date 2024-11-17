@@ -1,29 +1,29 @@
 package de.eldecker.dhbw;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 import java.util.Optional;
 
 public class App  {
+	
+	private static final Scanner sScanner = new Scanner( System.in );
 
     private static Optional<String> urlEinlesen() {
 
-        try {
+        System.out.print("Bitte URL eingeben: ");
+        String eingabeZeile = sScanner.nextLine();
 
-            InputStreamReader inputStream = new InputStreamReader( System.in );
-            BufferedReader reader = new BufferedReader( inputStream );
-            System.out.print( "\nBitte geben Sie eine URL ein: " );
-            String eingabe = reader.readLine();
-            //reader.close();
+        if (eingabeZeile == null) {
 
-            return Optional.of( eingabe );
-
-        } catch (IOException ex) {
-
-            System.err.println( "Ein Fehler ist aufgetreten: " + ex.getMessage() );
-            return Optional.empty();
+        	return Optional.empty();
         }
+
+        eingabeZeile = eingabeZeile.trim();
+        if ( eingabeZeile.isEmpty() ) {
+
+        	return Optional.empty();
+        }
+
+        return Optional.of( eingabeZeile );
     }
 
 
@@ -49,5 +49,7 @@ public class App  {
         }
 
         System.out.println();
+        
+        sScanner.close();
     }
 }
