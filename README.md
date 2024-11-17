@@ -2,8 +2,11 @@
 
 <br>
 
-Dieses Repo enthält ein einfaches Java-Programm zur Demonstration
-von [Maven](https://maven.apache.org).
+Dieses Repo enthält ein einfaches Java-Programm zur Demonstration von [Maven](https://maven.apache.org).
+Das Programm ist eine Kommandozeilenanwendung zur syntaktischen Überprüfung von URLs, 
+wobei die eigentliche Überprüfung von der Bibliothek 
+[Apache Commons Validator](https://commons.apache.org/proper/commons-validator/)
+durchgeführt wird.
 
 <br>
 
