@@ -1,5 +1,5 @@
-<project 
-    xmlns="http://maven.apache.org/POM/4.0.0" 
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
@@ -10,7 +10,7 @@
       <version>1.0-SNAPSHOT</version>
 
       <packaging>jar</packaging>
-      
+
       <name>url-pruefer</name>
       <url>https://github.com/MDecker-MobileComputing/Maven_UrlPruefer</url>
       <description>Einfache Kommendozeilenanwendung zur syntaktischen Überprüfung von URLs</description>
@@ -19,7 +19,7 @@
           <name>BSD 3-Clause License</name>
           <url>https://opensource.org/license/BSD-3-clause/</url>
         </license>
-      </licenses>  
+      </licenses>
 
       <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,8 +27,8 @@
         <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
       </properties>
 
-      <dependencies>
-      
+      <dependencies><!-- siehe URLs für neueste Version -->
+
             <!-- https://central.sonatype.com/artifact/commons-validator/commons-validator -->
             <dependency>
                 <groupId>commons-validator</groupId>
@@ -36,16 +36,16 @@
                 <version>1.9.0</version>
             </dependency>
 
-			<!-- Für Unit-Tests -->        
+			<!-- https://central.sonatype.com/artifact/org.junit.jupiter/junit-jupiter-api -->
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
                 <version>5.11.3</version>
                 <scope>test</scope>
             </dependency>
-        
+
       </dependencies>
-      
+
 
       <build>
         <plugins>
@@ -78,6 +78,6 @@
                 </executions>
             </plugin>
         </plugins>
-      </build>  
+      </build>
 
 </project>
