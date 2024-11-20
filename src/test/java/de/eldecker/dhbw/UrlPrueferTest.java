@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 
@@ -41,7 +42,8 @@ public class UrlPrueferTest {
     
     
     /**
-     * Die folgende Testmethode wird für jede der mit der Annotation {@code @ValueSource}
+     * Parametrisierte Testmethode:
+     * Die Testmethode wird für jede der mit der Annotation {@code @ValueSource}
      * angegebenen URLs ausgeführt.
      * 
      * @param url Korrekte URL, für die zu überprüfen ist, ob sie von der Methode
@@ -49,9 +51,9 @@ public class UrlPrueferTest {
      */
     @ParameterizedTest
     @ValueSource(strings = {
-        "https://de.wikipedia.org/wiki/Computer#Grundlagen", // URL mit Anker
-        "https://www.qwant.com/?q=testing&t=web"           , // URL mit zwei URL-Parametern
-        "https://www.qwant.com/?q=Gr%C3%BCnkohl"             // URL mit kodiertem Umlaut in URL-Parameter
+        "https://de.wikipedia.org/wiki/Computer#Grundlagen",
+        "https://www.qwant.com/?q=testing&t=web"           ,
+        "https://www.qwant.com/?q=Gr%C3%BCnkohl"            
     })
     void korrekteUrls( String url ) {
     	
@@ -77,5 +79,29 @@ public class UrlPrueferTest {
         final boolean ergebnis3 = pruefeUrl( "abcd" ); 
         assertFalse( ergebnis3, "Nur vier Buchstaben" );
     }
+    
+    
+    /**
+     * Parametrisierte Testmethode: 
+     * Die Testmethode wird für jedes mit der Annotation {@code @CsvSource}
+     * definierte Paar von URL und Fehlertext aufgerufen.
+     * 
+     * @param url URL mit Syntaxfehler
+     * 
+     * @param fehlertext Fehlermeldung, die vom Test Runner angezeigt wird,
+     *                   wenn {@code url} von der Methode unter Test nicht
+     *                   als fehlerhaft erkannt wird
+     */
+    @ParameterizedTest
+    @CsvSource({
+        "abc://example.com, Ungültiges Schema",
+        "http://, Fehlende Domain",
+        "http://.com, Fehlender Domainname",
+        "http://example..com, Doppelte Punkte in der Domain"
+    })
+    void inkorrekteUrls( String url, String fehlertext ) {
+    	
+        assertFalse( pruefeUrl( url ), fehlertext );
+    }    
     
 }
