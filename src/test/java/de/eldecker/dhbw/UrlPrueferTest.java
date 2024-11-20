@@ -15,7 +15,6 @@ import org.junit.jupiter.params.provider.ValueSource;
  * Unit-Tests für die Klasse {@link de.eldecker.dhbw.UrlPruefer}.
  */
 public class UrlPrueferTest {
-
     
     /**
      * Tests für Syntax-Überprüfung von korrekten URLs.
@@ -64,8 +63,8 @@ public class UrlPrueferTest {
     /**
      * Tests für Syntax-Überprüfung von inkorrekten URLs.<br>
      * 
-     * Jedes {@code assertFalse()} hat als zweites Argument einen String mit einer
-     * Nachricht, die beim Fehlschlagen dieser Assertion angezeigt werden.
+     * Jedes {@code assertFalse()} hat als zweites Argument einen String mit 
+     * einer Nachricht, die beim Fehlschlagen dieser Assertion angezeigt werden.
      */
     @Test
     void inkorrekteUrls() {
@@ -95,8 +94,8 @@ public class UrlPrueferTest {
     @ParameterizedTest
     @CsvSource({
         "abc://example.com, Ungültiges Schema",
-        "http://, Fehlende Domain",
-        "http://.com, Fehlender Domainname",
+        "http://, Fehlende Domain"            ,
+        "http://.com, Fehlender Domainname"   ,
         "http://example..com, Doppelte Punkte in der Domain"
     })
     void inkorrekteUrls( String url, String fehlertext ) {
