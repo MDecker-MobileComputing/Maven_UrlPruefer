@@ -29,7 +29,12 @@ public class UrlPrueferTest {
 
         // URL mit URL-Parameter
         final boolean ergebnis3 = pruefeUrl( "https://www.google.com/search?q=karlsruhe" );
-        assertTrue( ergebnis3 );        
+        assertTrue( ergebnis3 );
+        
+        /*
+        final boolean ergebnis4 = pruefeUrl( "http://localhost:8080" ); // Commons Validator akzeptiert nicht "localhost" 
+        assertTrue( ergebnis4, "Localhost auf Port 8080" );
+        */   
     }
     
 
