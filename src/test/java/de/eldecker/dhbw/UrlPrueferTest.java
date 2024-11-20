@@ -34,19 +34,22 @@ public class UrlPrueferTest {
     
 
     /**
-     * Tests für Syntax-Überprüfung von inkorrekten URLs.
+     * Tests für Syntax-Überprüfung von inkorrekten URLs.<br>
+     * 
+     * Jedes {@code assertFalse()} hat als zweites Argument einen String mit einer
+     * Nachricht, die beim Fehlschlagen dieser Assertion angezeigt werden.
      */
     @Test
     void inkorrekteUrls() {
 
-        final boolean ergebnis1 = pruefeUrl( "https://www.spiegel" ); // Top-Level-Domain fehlt
-        assertFalse( ergebnis1 );
+        final boolean ergebnis1 = pruefeUrl( "https://www.spiegel" );
+        assertFalse( ergebnis1, "Top-Level-Domain fehlt" );
 
-        final boolean ergebnis2 = pruefeUrl( "www.spiegel.de" ); // Schema http(s) fehlt
-        assertFalse( ergebnis2 );
+        final boolean ergebnis2 = pruefeUrl( "www.spiegel.de" );
+        assertFalse( ergebnis2, "Schema http(s) fehlt" );
 
         final boolean ergebnis3 = pruefeUrl( "abcd" ); 
-        assertFalse( ergebnis3 );
+        assertFalse( ergebnis3, "Nur vier Buchstaben" );
     }
     
 }
