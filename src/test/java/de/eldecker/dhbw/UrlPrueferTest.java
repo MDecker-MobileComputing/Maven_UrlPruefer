@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 
 /**
@@ -35,6 +37,25 @@ public class UrlPrueferTest {
         final boolean ergebnis4 = pruefeUrl( "http://localhost:8080" ); // Commons Validator akzeptiert nicht "localhost" 
         assertTrue( ergebnis4, "Localhost auf Port 8080" );
         */   
+    }
+    
+    
+    /**
+     * Die folgende Testmethode wird für jede der mit der Annotation {@code @ValueSource}
+     * angegebenen URLs ausgeführt.
+     * 
+     * @param url Korrekte URL, für die zu überprüfen ist, ob sie von der Methode
+     *            unter Test als syntaktisch korrekt erkannt werden.
+     */
+    @ParameterizedTest
+    @ValueSource(strings = {
+        "https://de.wikipedia.org/wiki/Computer#Grundlagen", // URL mit Anker
+        "https://www.qwant.com/?q=testing&t=web"           , // URL mit zwei URL-Parametern
+        "https://www.qwant.com/?q=Gr%C3%BCnkohl"             // URL mit kodiertem Umlaut in URL-Parameter
+    })
+    void korrekteUrls( String url ) {
+    	
+        assertTrue( pruefeUrl( url ) );
     }
     
 
