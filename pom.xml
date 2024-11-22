@@ -29,27 +29,28 @@
 
       <dependencies><!-- siehe URLs für neueste Version -->
 
-            <!-- https://central.sonatype.com/artifact/commons-validator/commons-validator -->
-            <dependency>
-                <groupId>commons-validator</groupId>
-                <artifactId>commons-validator</artifactId>
-                <version>1.9.0</version>
-            </dependency>
+        <!-- https://central.sonatype.com/artifact/commons-validator/commons-validator -->
+        <dependency>
+            <groupId>commons-validator</groupId>
+            <artifactId>commons-validator</artifactId>
+            <version>1.9.0</version>
+        </dependency>
 
-			<!-- https://central.sonatype.com/artifact/org.junit.jupiter/junit-jupiter-api -->
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
-                <version>5.11.3</version>
-                <scope>test</scope>
-            </dependency>
+        <!-- https://central.sonatype.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.11.3</version>
+            <scope>test</scope>
+        </dependency>
 
-            <dependency>
-            	<groupId>org.junit.jupiter</groupId>
-            	<artifactId>junit-jupiter-params</artifactId>
-            	<version>5.11.3</version>
-            	<scope>test</scope>
-            </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>5.11.3</version>
+            <scope>test</scope>
+        </dependency>
+
       </dependencies>
 
 

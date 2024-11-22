@@ -24,6 +24,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: UrlPruefer_FatJar
-        path: target/url-pruefer-*-SNAPSHOT.jar
+        path: target/url-pruefer-*-SNAPSHOT-jar-with-dependencies.jar
         if-no-files-found: error
         retention-days: 3
