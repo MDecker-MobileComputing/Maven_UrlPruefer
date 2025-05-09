@@ -13,6 +13,7 @@ import java.util.Optional;
  */
 public class App {
 
+
     /**
      * Einstiegspunkt der Programmausführung, enthält die Hauptschleife.
      *

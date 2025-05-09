@@ -16,6 +16,7 @@ import org.junit.jupiter.params.provider.ValueSource;
  */
 public class UrlPrueferTest {
     
+
     /**
      * Tests für Syntax-Überprüfung von korrekten URLs.
      */
