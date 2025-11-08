@@ -23,7 +23,7 @@
 
       <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>23</maven.compiler.source>
+        <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
       </properties>
 
@@ -33,7 +33,7 @@
         <dependency>
             <groupId>commons-validator</groupId>
             <artifactId>commons-validator</artifactId>
-            <version>1.9.0</version>
+            <version>1.10.0</version>
         </dependency>
 
         <!-- https://central.sonatype.com/artifact/org.junit.jupiter/junit-jupiter-api -->
