@@ -63,7 +63,7 @@
                   -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.7.1</version><!-- Für neueste Version siehe https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-assembly-plugin -->
+                <version>3.8.0</version><!-- Für neueste Version siehe https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-assembly-plugin -->
                 <configuration>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
