@@ -57,9 +57,9 @@
       <build>
         <plugins>
             <plugin>
-                <!-- "Fat Jar" bauen, wenn Befehl "mvn package"" ausgeführt wird
-                     Das "Fat Jar" sollte sich danach im Ordner "target/" befinden und wird wie folgt ausgeführt:
-                     java -jar rest-api-server-sprueche-1.0-SNAPSHOT-jar-with-dependencies.jar
+                <!-- "Fat Jar" bauen, wenn Befehl "mvnw package" ausgeführt wird
+                     Das "Fat Jar" sollte sich danach im Ordner "target" befinden und wird wie folgt ausgeführt:
+                     java -jar url-pruefer-1.0-SNAPSHOT-jar-with-dependencies.jar
                   -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
