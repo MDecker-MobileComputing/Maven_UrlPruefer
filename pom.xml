@@ -25,29 +25,31 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+        <junit.version>5.12.2</junit.version>
       </properties>
 
-      <dependencies><!-- siehe URLs für neueste Version -->
+      <dependencies>
 
         <!-- https://central.sonatype.com/artifact/commons-validator/commons-validator -->
         <dependency>
             <groupId>commons-validator</groupId>
             <artifactId>commons-validator</artifactId>
-            <version>1.10.0</version>
+            <version>1.11.0</version>
         </dependency>
 
         <!-- https://central.sonatype.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.12.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
 
+<!-- https://central.sonatype.com/artifact/org.junit.jupiter/junit-jupiter-params -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>5.12.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -57,7 +59,8 @@
       <build>
         <plugins>
             <plugin>
-                <!-- "Fat Jar" bauen, wenn Befehl "mvnw package" ausgeführt wird
+                <!-- 
+					 "Fat Jar" bauen, wenn Befehl "mvnw package" ausgeführt wird
                      Das "Fat Jar" sollte sich danach im Ordner "target" befinden und wird wie folgt ausgeführt:
                      java -jar url-pruefer-1.0-SNAPSHOT-jar-with-dependencies.jar
                   -->
