@@ -102,6 +102,5 @@ public class UrlPrueferTest {
     void inkorrekteUrls( String url, String fehlertext ) {
     	
         assertFalse( pruefeUrl( url ), fehlertext );
-    }    
-    
+    }        
 }

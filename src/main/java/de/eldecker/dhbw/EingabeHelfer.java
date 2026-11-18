@@ -47,6 +47,5 @@ public class EingabeHelfer {
     public static void eingabeSchliessen() {
     	
     		sScanner.close();
-    }
-    	
+    }    	
 }
